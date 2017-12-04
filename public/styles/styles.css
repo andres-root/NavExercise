@@ -79,9 +79,21 @@ header nav ul.menu .secondary {
   display: none;
 }
 
+header nav ul.menu .secondary.visible {
+  display: block;
+}
+
 header nav ul.menu .secondary li > a {
   font-family: 'GalaxieBook';
   text-transform: capitalize;
+}
+
+header nav ul.menu li:hover {
+  background-color: #d3d3d3;
+}
+
+header nav ul.menu li:hover > a {
+  color: #ec008c;
 }
 
 header nav ul.menu li a {
@@ -93,12 +105,9 @@ header nav ul.menu li a {
   text-transform: capitalize;
 }
 
-header nav ul.menu li:hover {
-  background-color: #d3d3d3;
-}
-
-header nav ul.menu li:hover > a {
-  color: #ec008c;
+header nav ul.menu li .toggle-secondary {
+  position: absolute;
+  right: 24px;
 }
 
 section.hero {

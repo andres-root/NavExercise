@@ -81,6 +81,10 @@ header {
 			.secondary {
 				display: none;
 
+				&.visible {
+					display: block;
+				}
+
 				li > a {
 					font-family: 'GalaxieBook';
 					text-transform: capitalize;
@@ -88,6 +92,15 @@ header {
 			}
 
 			li {
+
+				&:hover {
+					background-color: #d3d3d3;
+
+					>a {
+						color: $huge-magenta;
+					}
+				}
+				
 				a {
 					display: block;
 					font-family: 'HUGEAvantGardeBold';
@@ -97,12 +110,9 @@ header {
 					text-transform: capitalize;
 				}
 
-				&:hover {
-					background-color: #d3d3d3;
-
-					>a {
-						color: $huge-magenta;
-					}
+				.toggle-secondary {
+					position: absolute;
+    			right: 24px;
 				}
 			}
 
