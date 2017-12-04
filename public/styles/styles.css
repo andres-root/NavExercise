@@ -24,7 +24,7 @@ header a.logo {
   transition: margin-left .5s;
 }
 
-header a.logo.toggle {
+header a.logo.toggle-left {
   margin-left: 0;
 }
 
@@ -57,7 +57,7 @@ header nav ul.menu {
   width: 80%;
 }
 
-header nav ul.menu.toggle {
+header nav ul.menu.toggle-left {
   margin-left: 0;
 }
 
@@ -65,4 +65,8 @@ section.hero {
   background-image: url("../images/background-image.jpg");
   height: 90vh;
   transition: margin-left .5s;
+}
+
+section.hero.toggle-left {
+  margin-left: 80%;
 }
