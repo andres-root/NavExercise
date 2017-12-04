@@ -34,7 +34,6 @@ Nav.prototype.toggle = function toggle() {
 
 Nav.prototype.toggleSubnav = function toggle(secondary) {
 	secondary.classList.toggle('visible');
-	// this.classList.toggle('open');
 };
 
 
