@@ -107,7 +107,7 @@ header nav ul.menu li a:hover {
   color: #ec008c;
 }
 
-header nav ul.menu li a.toggle-secondary.open {
+header nav ul.menu li a.toggle-secondary.open img {
   transform: rotate(-180deg);
 }
 
