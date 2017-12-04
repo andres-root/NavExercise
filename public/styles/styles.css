@@ -75,19 +75,29 @@ header nav ul.menu.toggle-left {
   margin-left: 0;
 }
 
+header nav ul.menu .secondary {
+  display: none;
+}
+
+header nav ul.menu .secondary li > a {
+  font-family: 'GalaxieBook';
+  text-transform: capitalize;
+}
+
 header nav ul.menu li a {
   display: block;
   font-family: 'HUGEAvantGardeBold';
   font-size: 16px;
   line-height: 18px;
   padding: 24px;
+  text-transform: capitalize;
 }
 
 header nav ul.menu li:hover {
   background-color: #d3d3d3;
 }
 
-header nav ul.menu li:hover a {
+header nav ul.menu li:hover > a {
   color: #ec008c;
 }
 
