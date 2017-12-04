@@ -6,10 +6,16 @@ $huge-magenta: #ec008c;
     padding: 0;
 }
 
+
 body {
 	margin: 0;
 	overflow: hidden;
 	padding: 0;
+}
+
+a, a:link, a:visited, a:hover, a:active {
+	color: #000000;
+	text-decoration: none;
 }
 
 header {
@@ -71,6 +77,25 @@ header {
 			&.toggle-left {
 				margin-left: 0;
 			}
+
+			li {
+				a {
+					display: block;
+					font-family: 'HUGEAvantGardeBold';
+					font-size: 16px;
+					line-height: 18px;
+					padding: 24px;
+				}
+
+				&:hover {
+					background-color: #d3d3d3;
+
+					a {
+						color: $huge-magenta;
+					}
+				}
+			}
+
 		}
 	}
 }

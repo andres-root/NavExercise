@@ -6,7 +6,13 @@
 
 body {
   margin: 0;
+  overflow: hidden;
   padding: 0;
+}
+
+a, a:link, a:visited, a:hover, a:active {
+  color: #000000;
+  text-decoration: none;
 }
 
 header {
@@ -67,6 +73,22 @@ header nav ul.menu {
 
 header nav ul.menu.toggle-left {
   margin-left: 0;
+}
+
+header nav ul.menu li a {
+  display: block;
+  font-family: 'HUGEAvantGardeBold';
+  font-size: 16px;
+  line-height: 18px;
+  padding: 24px;
+}
+
+header nav ul.menu li:hover {
+  background-color: #d3d3d3;
+}
+
+header nav ul.menu li:hover a {
+  color: #ec008c;
 }
 
 section.hero {
