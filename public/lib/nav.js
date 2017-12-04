@@ -35,19 +35,36 @@ Nav.prototype.toggle = function toggle() {
 		this.element.classList.toggle('active');
 		this.logo.classList.toggle('toggle-left');
 		this.menu.classList.toggle('toggle-left');
+		document.querySelector('.content').classList.toggle('toggle-left');
+	} else {
+		this.removeOpened();
 	}
 	this.overlay.classList.toggle('visible');
-	document.querySelector('.content').classList.toggle('toggle-left');
 
 	// Change toggle icon
 	this.icon.classList.toggle('open');
 };
 
-Nav.prototype.toggleSubnav = function toggle(secondary) {
-	secondary.classList.toggle('visible');
-	if (window.innerWidth >= 768) {
-		this.overlay.classList.toggle('visible');
+Nav.prototype.cleanClass = function cleanClass(elements, className) {
+	for (var i = 0; i < elements.length; i++) {
+		elements[i].classList.remove(className);
 	}
+};
+
+Nav.prototype.removeOpened = function removeOpened() {
+	var elements = this.menu.querySelectorAll('.open');
+	this.cleanClass(elements, 'open');
+	elements = this.menu.querySelectorAll('.visible');
+	this.cleanClass(elements, 'visible');
+	this.overlay.classList.add('visible');
+};
+
+Nav.prototype.toggleSubnav = function toggle(secondary) {
+	if (window.innerWidth >= 768) {
+		this.removeOpened();
+		this.overlay.classList.add('visible');
+	}
+	secondary.classList.toggle('visible');
 };
 
 
