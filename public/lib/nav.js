@@ -12,7 +12,6 @@ Nav.prototype.init = function init() {
 	var self = this;
 
 	this.logo.addEventListener('click', function handleToggle(event) {
-		self.element.classList.toggle('active');
 		self.toggle();
 	}, false);
 
@@ -33,6 +32,7 @@ Nav.prototype.init = function init() {
 Nav.prototype.toggle = function toggle() {
 	if (window.innerWidth < 768) {
 		// Push from left
+		self.element.classList.toggle('active');
 		this.logo.classList.toggle('toggle-left');
 		this.menu.classList.toggle('toggle-left');
 	}
