@@ -213,6 +213,10 @@ header {
 							img {
 								transform: rotate(-180deg);
 							}
+
+							@media #{$desktop} {
+								background-color: #ffffff;
+							}
 						}
 
 						img {
