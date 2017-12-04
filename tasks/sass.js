@@ -27,13 +27,13 @@ function compileSass(options = {}) {
 
 // Expanded
 compileSass({
-  src : './public/sass/**/*.scss`',
-  dest: './public/styles/styles.css'
+  src : 'public/sass/main.scss',
+  dest: 'public/styles/styles.css'
 });
 
 // Minified
 compileSass({
-  src : './public/sass/**/*.scss`',
-  dest: './dist/css/styles.css',
+  src : 'public/sass/main.scss',
+  dest: 'dist/css/styles.css',
   style: 'compressed'
 });
