@@ -16,7 +16,7 @@ Nav.prototype.init = function init() {
 	}, false);
 
 	this.overlay.addEventListener('click', function handleOverlay(event) {
-		this.classList.toggle('visible');
+		self.toggle();
 	}, false);
 
 	for (var i = 0; i < this.toggleSecondary.length; i++) {

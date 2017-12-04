@@ -22,9 +22,11 @@ a, a:link, a:visited, a:hover, a:active {
 	background-color: rgba(0, 0, 0, 0.5);
 	display: none;
 	height: 100%;
+  left: 0;
 	position: fixed;
+	top: 0;
 	width: 100%;
-
+  
 	&.visible {
 		display: block;
 	}
