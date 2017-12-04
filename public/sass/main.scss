@@ -18,6 +18,18 @@ a, a:link, a:visited, a:hover, a:active {
 	text-decoration: none;
 }
 
+.overlay {
+	background-color: rgba(0, 0, 0, 0.5);
+	display: none;
+	height: 100%;
+	position: fixed;
+	width: 100%;
+
+	&.visible {
+		display: block;
+	}
+}
+
 header {
 	background-color: $huge-magenta;
 	height: 60px;

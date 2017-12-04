@@ -4,6 +4,7 @@ var Nav = function(className) {
 	this.menu = this.element.querySelector('.menu');
 	this.icon = this.element.querySelector('.svg');
 	this.toggleSecondary = this.element.querySelectorAll('.toggle-secondary');
+	this.overlay = document.querySelector('.overlay');
 };
 
 Nav.prototype.init = function init() {
@@ -14,18 +15,25 @@ Nav.prototype.init = function init() {
 		self.toggle();
 	}, false);
 
+	this.overlay.addEventListener('click', function handleOverlay(event) {
+		this.classList.toggle('visible');
+	}, false);
+
 	for (var i = 0; i < this.toggleSecondary.length; i++) {
 		this.toggleSecondary[i].addEventListener('click', function handleToggleSecondary(event) {
 			self.toggleSubnav(this.parentNode.querySelector('ul.secondary'));
 			this.classList.toggle('open');
 		}, false);
 	}
+
+
 };
 
 Nav.prototype.toggle = function toggle() {
 	// Push from left
 	this.logo.classList.toggle('toggle-left');
 	this.menu.classList.toggle('toggle-left');
+	this.overlay.classList.toggle('visible');
 	document.querySelector('.content').classList.toggle('toggle-left');
 
 	// Change toggle icon
