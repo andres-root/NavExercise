@@ -14,7 +14,8 @@ Nav.prototype.init = function init() {
 };
 
 Nav.prototype.toggle = function toggle() {
-	this.menu.classList.toggle('visible');
+	this.logo.classList.toggle('toggle');
+	this.menu.classList.toggle('toggle');
 };
 
 topnav = new Nav('.hg-nav');

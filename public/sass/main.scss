@@ -19,22 +19,37 @@ header {
 	a.logo {
 		display: inline-block;
 		height: 60px;
+		width: 100%;
+    margin-left: -80%;
+    position: relative;
+		transition: margin-left .5s;
+
+		&.toggle {
+			margin-left: 0;
+		}
 
 		img {
-			display: none;
+			width: 60px;
+		  display: inline-block;
+		  left: 24px;
+		  position: absolute;
+		  top: 50%;
+		  transform: translateY(-50%);
 		}
 
 		svg {
 			height: 60px;
-			width: 98px;
+			position: absolute;
+			right: 0;
+			width: 60px;
 		}
 	}
 
 	nav {
-		height: 100vh;
 
 		ul.menu {
 			background-color: #ffffff;
+			height: 100vh;
 			list-style: none;
 			margin: 0;
 			margin-left: -80%;
@@ -42,12 +57,10 @@ header {
 			padding: 0;
 			position: relative;
 			transition: margin-left .5s;
-			width: 0;
+			width: 80%;
 
-			&.visible {
-				display: block;
+			&.toggle {
 				margin-left: 0;
-				width: 80%;
 			}
 		}
 	}
