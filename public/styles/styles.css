@@ -30,12 +30,6 @@ a, a:link, a:visited, a:hover, a:active {
 }
 
 @media only screen and (min-width: 768px) {
-  .overlay.visible {
-    display: none;
-  }
-}
-
-@media only screen and (min-width: 768px) {
   .overlay {
     display: none;
   }
@@ -155,8 +149,7 @@ header nav ul.menu .secondary {
     background-color: white;
     display: none;
     list-style: none;
-    margin-top: -4px;
-    width: 160px;
+    width: auto;
   }
   header nav ul.menu .secondary li {
     float: unset;
@@ -165,7 +158,7 @@ header nav ul.menu .secondary {
     color: #000000;
   }
   header nav ul.menu .secondary li > a:hover {
-    background-color: #d3d3d3;
+    background-color: #eeeeee;
     color: #ec008c;
   }
 }
@@ -180,7 +173,7 @@ header nav ul.menu .secondary li > a {
 }
 
 header nav ul.menu .secondary li > a:hover {
-  background-color: #d3d3d3;
+  background-color: #eeeeee;
   color: #ec008c;
 }
 
@@ -202,11 +195,13 @@ header nav ul.menu li a {
 @media only screen and (min-width: 768px) {
   header nav ul.menu li a {
     color: #ffffff;
+    font-size: 21px;
+    padding-bottom: 18px;
   }
 }
 
 header nav ul.menu li a:hover {
-  background-color: #d3d3d3;
+  background-color: #eeeeee;
   color: #ec008c;
 }
 

@@ -34,10 +34,6 @@ a, a:link, a:visited, a:hover, a:active {
   
 	&.visible {
 		display: block;
-
-		@media #{$desktop} {
-			display: none;
-		}
 	}
 
 	@media #{$desktop} {
@@ -150,8 +146,7 @@ header {
 			    background-color: white;
 			    display: none;
 			    list-style: none;
-			    margin-top: -4px;
-			    width: 160px;
+			    width: auto;
 
 			    li {
 			    	float: unset;
@@ -161,7 +156,7 @@ header {
 			    	color: #000000;
 
 						&:hover {
-							background-color: #d3d3d3;
+							background-color: #eeeeee;
 							color: $huge-magenta;
 						}
 					}
@@ -177,7 +172,7 @@ header {
 					text-transform: capitalize;
 
 					&:hover {
-						background-color: #d3d3d3;
+						background-color: #eeeeee;
 						color: $huge-magenta;
 					}
 				}
@@ -199,10 +194,12 @@ header {
 
 					@media #{$desktop} {
 						color: #ffffff;
+						font-size: 21px;
+						padding-bottom: 18px;
 					}
 
 					&:hover {
-						background-color: #d3d3d3;
+						background-color: #eeeeee;
 						color: $huge-magenta;
 
 						@media #{$desktop} {
