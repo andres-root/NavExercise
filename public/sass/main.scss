@@ -37,11 +37,20 @@ header {
 		  transform: translateY(-50%);
 		}
 
-		svg {
+		.svg {
+			cursor: pointer;
 			height: 60px;
 			position: absolute;
 			right: 0;
 			width: 60px;
+
+			&.open {
+				background-image: url('../images/toggle-open.svg')
+			}
+
+			&.close {
+				background-image: url('../images/toggle-close.svg')
+			}
 		}
 	}
 

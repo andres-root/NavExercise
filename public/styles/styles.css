@@ -37,11 +37,20 @@ header a.logo img {
   transform: translateY(-50%);
 }
 
-header a.logo svg {
+header a.logo .svg {
+  cursor: pointer;
   height: 60px;
   position: absolute;
   right: 0;
   width: 60px;
+}
+
+header a.logo .svg.open {
+  background-image: url("../images/toggle-open.svg");
+}
+
+header a.logo .svg.close {
+  background-image: url("../images/toggle-close.svg");
 }
 
 header nav ul.menu {
