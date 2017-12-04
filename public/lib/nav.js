@@ -32,7 +32,7 @@ Nav.prototype.init = function init() {
 Nav.prototype.toggle = function toggle() {
 	if (window.innerWidth < 768) {
 		// Push from left
-		self.element.classList.toggle('active');
+		this.element.classList.toggle('active');
 		this.logo.classList.toggle('toggle-left');
 		this.menu.classList.toggle('toggle-left');
 	}
