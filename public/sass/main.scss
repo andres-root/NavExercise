@@ -38,6 +38,9 @@ header {
 		}
 
 		.svg {
+			background-image: url('../images/toggle-open.svg');
+			background-repeat: no-repeat;
+			background-size: contain;
 			cursor: pointer;
 			height: 60px;
 			position: absolute;
@@ -45,10 +48,6 @@ header {
 			width: 60px;
 
 			&.open {
-				background-image: url('../images/toggle-open.svg')
-			}
-
-			&.close {
 				background-image: url('../images/toggle-close.svg')
 			}
 		}

@@ -38,6 +38,9 @@ header a.logo img {
 }
 
 header a.logo .svg {
+  background-image: url("../images/toggle-open.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
   cursor: pointer;
   height: 60px;
   position: absolute;
@@ -46,10 +49,6 @@ header a.logo .svg {
 }
 
 header a.logo .svg.open {
-  background-image: url("../images/toggle-open.svg");
-}
-
-header a.logo .svg.close {
   background-image: url("../images/toggle-close.svg");
 }
 
