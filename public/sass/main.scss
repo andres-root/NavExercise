@@ -31,6 +31,7 @@ a, a:link, a:visited, a:hover, a:active {
 	position: fixed;
 	top: 0;
 	width: 100%;
+	z-index: 1;
   
 	&.visible {
 		display: block;
@@ -50,7 +51,8 @@ header {
 	@media #{$desktop} {
 		align-items: center;
 		display: flex;
-		// overflow: hidden;
+		position: absolute;
+		z-index: 1024;
 	}
 
 	
@@ -216,6 +218,7 @@ header {
 
 							@media #{$desktop} {
 								background-color: #ffffff;
+								color: $huge-magenta;
 							}
 						}
 
@@ -240,6 +243,10 @@ section.hero {
 
 	&.toggle-left {
 		margin-left: 80%;
+	}
+
+	@media #{$desktop} {
+		height: 100vh;
 	}
 
 }

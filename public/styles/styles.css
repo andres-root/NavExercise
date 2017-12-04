@@ -23,6 +23,7 @@ a, a:link, a:visited, a:hover, a:active {
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 1;
 }
 
 .overlay.visible {
@@ -45,6 +46,8 @@ header {
   header {
     align-items: center;
     display: flex;
+    position: absolute;
+    z-index: 1024;
   }
 }
 
@@ -215,6 +218,13 @@ header nav ul.menu li a.toggle-secondary.open img {
   transform: rotate(-180deg);
 }
 
+@media only screen and (min-width: 768px) {
+  header nav ul.menu li a.toggle-secondary.open {
+    background-color: #ffffff;
+    color: #ec008c;
+  }
+}
+
 header nav ul.menu li a.toggle-secondary img {
   position: absolute;
   right: 24px;
@@ -229,4 +239,10 @@ section.hero {
 
 section.hero.toggle-left {
   margin-left: 80%;
+}
+
+@media only screen and (min-width: 768px) {
+  section.hero {
+    height: 100vh;
+  }
 }

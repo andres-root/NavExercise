@@ -30,9 +30,11 @@ Nav.prototype.init = function init() {
 };
 
 Nav.prototype.toggle = function toggle() {
-	// Push from left
-	this.logo.classList.toggle('toggle-left');
-	this.menu.classList.toggle('toggle-left');
+	if (window.innerWidth < 768) {
+		// Push from left
+		this.logo.classList.toggle('toggle-left');
+		this.menu.classList.toggle('toggle-left');
+	}
 	this.overlay.classList.toggle('visible');
 	document.querySelector('.content').classList.toggle('toggle-left');
 
@@ -42,6 +44,9 @@ Nav.prototype.toggle = function toggle() {
 
 Nav.prototype.toggleSubnav = function toggle(secondary) {
 	secondary.classList.toggle('visible');
+	if (window.innerWidth >= 768) {
+		this.overlay.classList.toggle('visible');
+	}
 };
 
 
