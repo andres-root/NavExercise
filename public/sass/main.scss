@@ -117,7 +117,7 @@ header {
 	}
 
 	nav {
-		width: 100%;
+		width: 80%;
 
 		@media #{$desktop} {
 			display: inline-block;
@@ -135,7 +135,7 @@ header {
 			padding: 0;
 			position: relative;
 			transition: margin-left .5s;
-			width: 80%;
+			width: 100%;
 
 			@media #{$desktop} {
 				background-color: transparent;
