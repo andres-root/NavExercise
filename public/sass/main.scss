@@ -1,4 +1,9 @@
+// Colors
 $huge-magenta: #ec008c;
+
+// Breakpoints
+$desktop: 'only screen and (min-width : 768px)';
+
 
 * {
     box-sizing: border-box;
@@ -29,13 +34,29 @@ a, a:link, a:visited, a:hover, a:active {
   
 	&.visible {
 		display: block;
+
+		@media #{$desktop} {
+			display: none;
+		}
 	}
+
+	@media #{$desktop} {
+		display: none;
+	}
+
 }
 
 header {
 	background-color: $huge-magenta;
 	height: 60px;
 	width: 100%;
+
+	@media #{$desktop} {
+		align-items: center;
+		display: flex;
+		// overflow: hidden;
+	}
+
 	
 	a.logo {
 		display: inline-block;
@@ -44,6 +65,14 @@ header {
     margin-left: -80%;
     position: relative;
 		transition: margin-left .5s;
+
+		@media #{$desktop} {
+			align-items: center;
+			display: flex;
+			margin-left: 0;
+			width: 98px;
+		}
+
 
 		&.toggle-left {
 			margin-left: 0;
@@ -56,6 +85,12 @@ header {
 		  position: absolute;
 		  top: 50%;
 		  transform: translateY(-50%);
+
+		  @media #{$desktop} {
+		  	top: auto;
+		  	transform: none;
+		  }
+
 		}
 
 		.svg {
@@ -71,10 +106,19 @@ header {
 			&.open {
 				background-image: url('../images/toggle-close.svg')
 			}
+
+			@media #{$desktop} {
+				display: none;
+			}
 		}
 	}
 
 	nav {
+		@media #{$desktop} {
+			display: inline-block;
+			width: 90%;
+		}
+
 
 		ul.menu {
 			background-color: #ffffff;
@@ -88,12 +132,41 @@ header {
 			transition: margin-left .5s;
 			width: 80%;
 
+			@media #{$desktop} {
+				background-color: transparent;
+				height: 60px;
+				margin: 0;
+			}
+
 			&.toggle-left {
 				margin-left: 0;
 			}
 
 			.secondary {
 				display: none;
+				
+				@media #{$desktop} {
+					position: absolute;
+			    background-color: white;
+			    display: none;
+			    list-style: none;
+			    margin-top: -4px;
+			    width: 160px;
+
+			    li {
+			    	float: unset;
+			    }
+
+			    li > a {
+			    	color: #000000;
+
+						&:hover {
+							background-color: #d3d3d3;
+							color: $huge-magenta;
+						}
+					}
+				}
+
 
 				&.visible {
 					display: block;
@@ -111,6 +184,10 @@ header {
 			}
 
 			li {
+
+				@media #{$desktop} {
+					float: left;
+				}
 				
 				a {
 					display: block;
@@ -120,9 +197,18 @@ header {
 					padding: 24px;
 					text-transform: capitalize;
 
+					@media #{$desktop} {
+						color: #ffffff;
+					}
+
 					&:hover {
 						background-color: #d3d3d3;
 						color: $huge-magenta;
+
+						@media #{$desktop} {
+							background-color: #ffffff;
+						}
+
 					}
 					
 					&.toggle-secondary {
