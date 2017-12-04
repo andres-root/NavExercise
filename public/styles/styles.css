@@ -15,21 +15,21 @@ header {
   width: 100%;
 }
 
-header nav a.logo {
+header a.logo {
   display: inline-block;
   height: 60px;
 }
 
-header nav a.logo img {
+header a.logo img {
   display: none;
 }
 
-header nav a.logo svg {
+header a.logo svg {
   height: 60px;
   width: 98px;
 }
 
-header nav ul {
+header nav ul.menu {
   background-color: #ffffff;
   list-style: none;
   margin: 0;
@@ -41,7 +41,7 @@ header nav ul {
   width: 0;
 }
 
-header nav ul.visible {
+header nav ul.menu.visible {
   display: block;
   margin-left: 0;
   width: 80%;
