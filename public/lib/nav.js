@@ -3,14 +3,62 @@ var Nav = function(className) {
 	this.logo = this.element.querySelector('.logo');
 	this.menu = this.element.querySelector('.menu');
 	this.icon = this.element.querySelector('.svg');
-	this.toggleSecondary = this.element.querySelectorAll('.toggle-secondary');
 	this.overlay = document.querySelector('.overlay');
+};
+
+Nav.prototype.createNode = function createNode(elementType) {
+	return document.createElement(elementType);
+};
+
+Nav.prototype.appendNode = function appendNode(parent, el) {
+  return parent.appendChild(el);
+};
+
+Nav.prototype.factory = function factory(data) {
+	var self = this;
+	var container = this.menu;
+
+	var items = data.items;
+	items.map(function (item) {
+		var subitems = item.items;
+		var li = self.createNode('li'),
+				a = self.createNode('a');
+		a.innerHTML = item.label;
+		if (subitems.length > 0) {
+			var img = self.createNode('img'),
+					ul = self.createNode('ul');
+			img.src = '/images/down-arrow.png';
+			ul.className = 'secondary';
+			self.appendNode(a, img);
+			a.className = 'toggle-secondary';
+			subitems.map(function (subitem) {
+				var sli = self.createNode('li'),
+						sa = self.createNode('a');
+				sa.innerHTML = subitem.label;
+				sa.href = subitem.url;
+				self.appendNode(sli, sa);
+				self.appendNode(ul, sli);
+			});
+		}
+		a.href = item.url;
+		self.appendNode(li, a);
+		if (ul) {
+			self.appendNode(li, ul);
+		}
+		self.appendNode(container, li);
+	});
+	this.toggleSecondary = this.element.querySelectorAll('.toggle-secondary');
+	this.addEvents();
 };
 
 Nav.prototype.init = function init() {
 	console.log('Nav.init()');
-	var self = this;
+	this.data('/api/nav.json');
+};
 
+Nav.prototype.addEvents = function addEvents() {
+	console.log('Nav.addEvents()');
+	var self = this;
 	this.logo.addEventListener('click', function handleToggle(event) {
 		self.toggle();
 	}, false);
@@ -25,8 +73,6 @@ Nav.prototype.init = function init() {
 			this.classList.toggle('open');
 		}, false);
 	}
-
-
 };
 
 Nav.prototype.toggle = function toggle() {
@@ -67,6 +113,28 @@ Nav.prototype.toggleSubnav = function toggle(secondary) {
 	secondary.classList.toggle('visible');
 };
 
+Nav.prototype.data = function data(url) {
+	var self = this;
+	fetch(url)
+  .then(
+    function(response) {
+      if (response.status !== 200) {
+        console.log('Error. Status Code: ' +
+          response.status);
+        return;
+      }
+
+      // Examine the text in the response
+      response.json().then(function(data) {
+        console.log(data);
+				self.factory(data);
+      });
+    }
+  )
+  .catch(function(err) {
+    console.log('Fetch Error :-S', err);
+  });
+};
 
 topnav = new Nav('.hg-nav');
 topnav.init();
