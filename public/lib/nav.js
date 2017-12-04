@@ -16,7 +16,8 @@ Nav.prototype.init = function init() {
 
 	for (var i = 0; i < this.toggleSecondary.length; i++) {
 		this.toggleSecondary[i].addEventListener('click', function handleToggleSecondary(event) {
-			self.toggleSubnav(this.parentNode.parentNode.querySelector('ul.secondary'));
+			self.toggleSubnav(this.parentNode.querySelector('ul.secondary'));
+			this.classList.toggle('open');
 		}, false);
 	}
 };
@@ -33,6 +34,7 @@ Nav.prototype.toggle = function toggle() {
 
 Nav.prototype.toggleSubnav = function toggle(secondary) {
 	secondary.classList.toggle('visible');
+	// this.classList.toggle('open');
 };
 
 

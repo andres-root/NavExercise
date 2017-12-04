@@ -88,18 +88,15 @@ header {
 				li > a {
 					font-family: 'GalaxieBook';
 					text-transform: capitalize;
+
+					&:hover {
+						background-color: #d3d3d3;
+						color: $huge-magenta;
+					}
 				}
 			}
 
 			li {
-
-				&:hover {
-					background-color: #d3d3d3;
-
-					>a {
-						color: $huge-magenta;
-					}
-				}
 				
 				a {
 					display: block;
@@ -108,12 +105,27 @@ header {
 					line-height: 18px;
 					padding: 24px;
 					text-transform: capitalize;
+
+					&:hover {
+						background-color: #d3d3d3;
+						color: $huge-magenta;
+					}
+					
+					&.toggle-secondary {
+						&.open {
+							img {
+								transform: rotate(-180deg);
+							}
+						}
+
+						img {
+							position: absolute;
+		    			right: 24px;
+		    			transition: 0.5s;
+						}
+					}
 				}
 
-				.toggle-secondary {
-					position: absolute;
-    			right: 24px;
-				}
 			}
 
 		}
