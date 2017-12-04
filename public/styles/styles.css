@@ -29,6 +29,10 @@ header a.logo svg {
   width: 98px;
 }
 
+header nav {
+  height: 100vh;
+}
+
 header nav ul.menu {
   background-color: #ffffff;
   list-style: none;
