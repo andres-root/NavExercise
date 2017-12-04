@@ -14,8 +14,10 @@ Nav.prototype.init = function init() {
 };
 
 Nav.prototype.toggle = function toggle() {
-	this.logo.classList.toggle('toggle');
-	this.menu.classList.toggle('toggle');
+	this.logo.classList.toggle('toggle-left');
+	this.menu.classList.toggle('toggle-left');
+	this.menu.classList.toggle('toggle-left');
+	document.querySelector('.content').toggle('toggle-left');
 };
 
 topnav = new Nav('.hg-nav');
