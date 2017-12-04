@@ -12,6 +12,7 @@ Nav.prototype.init = function init() {
 	var self = this;
 
 	this.logo.addEventListener('click', function handleToggle(event) {
+		self.element.classList.toggle('active');
 		self.toggle();
 	}, false);
 

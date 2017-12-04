@@ -40,6 +40,11 @@ header {
   background-color: #ec008c;
   height: 60px;
   width: 100%;
+  z-index: 1024;
+}
+
+header.active {
+  position: absolute;
 }
 
 @media only screen and (min-width: 768px) {
@@ -110,6 +115,10 @@ header a.logo .svg.open {
   }
 }
 
+header nav {
+  width: 100%;
+}
+
 @media only screen and (min-width: 768px) {
   header nav {
     display: inline-block;
@@ -122,12 +131,12 @@ header nav ul.menu {
   height: 100vh;
   list-style: none;
   margin: 0;
-  margin-left: -80%;
+  margin-left: -100%;
   margin-top: -4px;
   padding: 0;
   position: relative;
   transition: margin-left .5s;
-  width: 80%;
+  width: 100%;
 }
 
 @media only screen and (min-width: 768px) {
