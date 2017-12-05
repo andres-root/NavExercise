@@ -307,10 +307,6 @@ section.hero h1 {
   }
 }
 
-section.copy {
-  min-width: 100vw;
-}
-
 section.copy h2 {
   color: #000000;
   display: block;
