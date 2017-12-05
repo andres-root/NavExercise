@@ -118,14 +118,11 @@ Nav.prototype.addEvents = function addEvents() {
 	var self = this;
 
 	this.logo.addEventListener('click', function handleToggle(event) {
+		event.preventDefault();
 		self.toggle();
 	}, false);
 
 	this.overlay.addEventListener('click', function handleOverlay(event) {
-		self.toggle();
-	}, false);
-
-	this.overlay.addEventListener('touchstart', function handleOverlayTouch(event) {
 		self.toggle();
 	}, false);
 
