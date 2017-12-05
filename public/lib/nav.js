@@ -2,7 +2,7 @@
  * Navigation Component.
  * By Andres Lujan 
  * 
- * @param {string} className
+ * @param {String} className
  * @class
  */
 
@@ -28,7 +28,7 @@ Nav.prototype.init = function init() {
 
 /**
  * data() make request to API
- * @param {string} url
+ * @param {String} url
  */
 Nav.prototype.data = function data(url) {
 	var self = this;
@@ -56,7 +56,7 @@ Nav.prototype.data = function data(url) {
 
 /**
  * factory() create menu using API data
- * @param {data} JSON
+ * @param {JSON} data
  */
  Nav.prototype.factory = function factory(data) {
 	var self = this;
@@ -136,8 +136,21 @@ Nav.prototype.addEvents = function addEvents() {
 
 
 /**
+ * toggleSubnav() show secondary items
+ * @param {Element} secondary
+ */
+Nav.prototype.toggleSubnav = function toggle(secondary) {
+	if (window.innerWidth >= 768) {
+		this.removeOpened();
+		this.overlay.classList.add('visible');
+	}
+	secondary.classList.toggle('visible');
+};
+
+
+/**
  * createNode() create DOM Element
- * @param {elementType} string
+ * @param {String} elementType
  */
 Nav.prototype.createNode = function createNode(elementType) {
 	return document.createElement(elementType);
@@ -146,8 +159,8 @@ Nav.prototype.createNode = function createNode(elementType) {
 
 /**
  * appendNode() append element to existing DOM Element
- * @param {parent} Element
- * @param {el} Element
+ * @param {Element} parent
+ * @param {Element} el
  */
 Nav.prototype.appendNode = function appendNode(parent, el) {
   return parent.appendChild(el);
@@ -156,7 +169,7 @@ Nav.prototype.appendNode = function appendNode(parent, el) {
 
 /**
  * toggle() toggle navigation dropdowns
- * on Desktop and Mobile
+ * on Desktop and Mobile Breakpoints
  */
 Nav.prototype.toggle = function toggle() {
 
@@ -171,18 +184,19 @@ Nav.prototype.toggle = function toggle() {
 	  // Remove current opened items
 		this.removeOpened();
 	}
+
+	// Show overlay over content
 	this.overlay.classList.toggle('visible');
 
 	// Change toggle icon
 	this.icon.classList.toggle('open');
 };
 
-Nav.prototype.cleanClass = function cleanClass(elements, className) {
-	for (var i = 0; i < elements.length; i++) {
-		elements[i].classList.remove(className);
-	}
-};
 
+/**
+ * removeOpened() remove all opened items
+ *
+ */
 Nav.prototype.removeOpened = function removeOpened() {
 	var elements = this.menu.querySelectorAll('.open');
 	this.cleanClass(elements, 'open');
@@ -191,15 +205,24 @@ Nav.prototype.removeOpened = function removeOpened() {
 	this.overlay.classList.add('visible');
 };
 
-Nav.prototype.toggleSubnav = function toggle(secondary) {
-	if (window.innerWidth >= 768) {
-		this.removeOpened();
-		this.overlay.classList.add('visible');
+
+/**
+ * cleanClass() remove class name from list of elements
+ * @param {List} elements
+ * @param {String} className
+ */
+Nav.prototype.cleanClass = function cleanClass(elements, className) {
+	for (var i = 0; i < elements.length; i++) {
+		elements[i].classList.remove(className);
 	}
-	secondary.classList.toggle('visible');
 };
 
+var navElements = document.querySelectorAll('.hg-nav');
+var navList = [];
+var topnav;
 
-
-topnav = new Nav('.hg-nav');
-topnav.init();
+for (var i = 0; i < navElements.length; i++) {
+	topnav = new Nav('.hg-nav');
+	topnav.init();
+	navList.push(topnav);
+}
