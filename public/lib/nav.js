@@ -217,6 +217,8 @@ Nav.prototype.cleanClass = function cleanClass(elements, className) {
 	}
 };
 
+
+// Look for all navigation items in page and create them
 var navElements = document.querySelectorAll('.hg-nav');
 var navList = [];
 var topnav;
