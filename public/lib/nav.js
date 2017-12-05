@@ -69,16 +69,19 @@ Nav.prototype.data = function data(url) {
 		var subitems = item.items;
 		var li = self.createNode('li'),
 				a = self.createNode('a');
-		a.innerHTML = item.label;
 
 		// Check if secondary navigation items exist
 		if (subitems.length > 0) {
 			var img = self.createNode('img'),
 					ul = self.createNode('ul');
+
+			// Add down arrow to secondary items header
 			img.src = '/images/down-arrow.png';
 			ul.className = 'secondary';
 			self.appendNode(a, img);
 			a.className = 'toggle-secondary';
+
+			// Go through all subitems and create DOM Elements
 			subitems.map(function (subitem) {
 				var sli = self.createNode('li'),
 						sa = self.createNode('a');
@@ -88,8 +91,13 @@ Nav.prototype.data = function data(url) {
 				self.appendNode(ul, sli);
 			});
 		}
+
+		// Continue creating item element
+		a.innerHTML = item.label;
 		a.href = item.url;
 		self.appendNode(li, a);
+
+		// If secondary items append list
 		if (ul) {
 			self.appendNode(li, ul);
 		}
