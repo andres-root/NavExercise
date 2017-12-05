@@ -127,6 +127,7 @@ Nav.prototype.addEvents = function addEvents() {
 
 	for (var i = 0; i < this.toggleSecondary.length; i++) {
 		this.toggleSecondary[i].addEventListener('click', function handleToggleSecondary(event) {
+			event.preventDefault();
 			self.toggleSubnav(this.parentNode.querySelector('ul.secondary'));
 			this.classList.toggle('open');
 		}, false);
