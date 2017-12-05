@@ -70,6 +70,10 @@ Nav.prototype.data = function data(url) {
 		var li = self.createNode('li'),
 				a = self.createNode('a');
 
+		a.innerHTML = item.label;
+		a.href = item.url;
+		self.appendNode(li, a);
+
 		// Check if secondary navigation items exist
 		if (subitems.length > 0) {
 			var img = self.createNode('img'),
@@ -91,11 +95,6 @@ Nav.prototype.data = function data(url) {
 				self.appendNode(ul, sli);
 			});
 		}
-
-		// Continue creating item element
-		a.innerHTML = item.label;
-		a.href = item.url;
-		self.appendNode(li, a);
 
 		// If secondary items append list
 		if (ul) {
