@@ -233,6 +233,10 @@ header {
 							@media #{$desktop} {
 								background-color: #ffffff;
 								color: $huge-magenta;
+
+								img {
+									display: none;
+								}
 							}
 						}
 
