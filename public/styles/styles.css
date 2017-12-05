@@ -39,6 +39,7 @@ a, a:link, a:visited, a:hover, a:active {
 .wrapper {
   transition: margin-left .5s;
   min-width: 100vw;
+  overflow-x: hidden;
 }
 
 .wrapper.toggle-left {
