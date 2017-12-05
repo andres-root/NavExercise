@@ -65,6 +65,12 @@ header a.logo {
   transition: margin-left .5s;
 }
 
+@media only screen and (min-width: 576px) {
+  header a.logo {
+    margin-left: -90%;
+  }
+}
+
 @media only screen and (min-width: 768px) {
   header a.logo {
     align-items: center;
@@ -207,8 +213,14 @@ header nav ul.menu li a {
 @media only screen and (min-width: 768px) {
   header nav ul.menu li a {
     color: #ffffff;
-    font-size: 21px;
+    font-size: 14px;
     padding-bottom: 18px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  header nav ul.menu li a {
+    font-size: 21px;
   }
 }
 
@@ -245,6 +257,12 @@ header nav ul.menu li a.toggle-secondary img {
   position: absolute;
   right: 24px;
   transition: 0.5s;
+}
+
+@media only screen and (min-width: 768px) {
+  header nav ul.menu li a.toggle-secondary img {
+    display: none;
+  }
 }
 
 section.hero {

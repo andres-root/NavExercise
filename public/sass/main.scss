@@ -2,7 +2,9 @@
 $huge-magenta: #ec008c;
 
 // Breakpoints
+$tablet: 'only screen and (min-width : 576px)';
 $desktop: 'only screen and (min-width : 768px)';
+$large: 'only screen and (min-width : 992px)';
 
 
 * {
@@ -68,6 +70,10 @@ header {
     margin-left: -80%;
     position: relative;
 		transition: margin-left .5s;
+
+		@media #{$tablet} {
+    	margin-left: -90%;
+		}
 
 		@media #{$desktop} {
 			align-items: center;
@@ -203,8 +209,12 @@ header {
 
 					@media #{$desktop} {
 						color: #ffffff;
-						font-size: 21px;
+						font-size: 14px;
 						padding-bottom: 18px;
+					}
+
+					@media #{$large} {
+						font-size: 21px;
 					}
 
 					&:hover {
@@ -233,10 +243,6 @@ header {
 							@media #{$desktop} {
 								background-color: #ffffff;
 								color: $huge-magenta;
-
-								img {
-									display: none;
-								}
 							}
 						}
 
@@ -244,6 +250,10 @@ header {
 							position: absolute;
 		    			right: 24px;
 		    			transition: 0.5s;
+
+							@media #{$desktop} {
+								display: none;
+		    			}
 						}
 					}
 				}
