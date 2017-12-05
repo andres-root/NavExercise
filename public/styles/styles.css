@@ -223,6 +223,13 @@ header nav ul.menu li a:hover {
   }
 }
 
+@media only screen and (min-width: 768px) {
+  header nav ul.menu li a:focus {
+    background-color: #ffffff;
+    color: #ec008c;
+  }
+}
+
 header nav ul.menu li a.toggle-secondary.open img {
   transform: rotate(-180deg);
 }
@@ -244,10 +251,17 @@ section.hero {
   background-image: url("../images/background-image.jpg");
   height: 90vh;
   transition: margin-left .5s;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 section.hero.toggle-left {
   margin-left: 80%;
+}
+
+section.hero h1 {
+  font-family: 'HUGEAvantGardeBold';
+  font-size: 100px;
 }
 
 @media only screen and (min-width: 768px) {

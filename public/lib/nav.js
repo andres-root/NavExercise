@@ -1,3 +1,13 @@
+/**
+ * Navigation Component.
+ * Andres Lujan 
+ * 
+ * @param {string} className
+ * @class
+ */
+
+'use strict';
+
 var Nav = function(className) {
 	this.element = document.querySelector(className);
 	this.logo = this.element.querySelector('.logo');
@@ -6,6 +16,48 @@ var Nav = function(className) {
 	this.overlay = document.querySelector('.overlay');
 };
 
+
+/**
+ * init() initialize the Nav object
+ * using data from API
+ */
+Nav.prototype.init = function init() {
+	this.data('/api/nav.json');
+};
+
+
+/**
+ * data() make request to API
+ * @param {string} url
+ */
+Nav.prototype.data = function data(url) {
+	var self = this;
+	fetch(url)
+  .then(
+    function(response) {
+      if (response.status !== 200) {
+        console.log('Error. Status Code: ' +
+          response.status);
+        return;
+      }
+
+      // Examine the text in the response
+      response.json().then(function(data) {
+      	// Call
+				self.factory(data);
+      });
+    }
+  )
+  .catch(function(err) {
+    console.log('Fetch Error :-S', err);
+  });
+};
+
+
+/**
+ * data() makes request to API
+ * @param {string} url
+ */
 Nav.prototype.createNode = function createNode(elementType) {
 	return document.createElement(elementType);
 };
@@ -51,10 +103,6 @@ Nav.prototype.factory = function factory(data) {
 	this.addEvents();
 };
 
-Nav.prototype.init = function init() {
-	console.log('Nav.init()');
-	this.data('/api/nav.json');
-};
 
 Nav.prototype.addEvents = function addEvents() {
 	console.log('Nav.addEvents()');
@@ -113,28 +161,7 @@ Nav.prototype.toggleSubnav = function toggle(secondary) {
 	secondary.classList.toggle('visible');
 };
 
-Nav.prototype.data = function data(url) {
-	var self = this;
-	fetch(url)
-  .then(
-    function(response) {
-      if (response.status !== 200) {
-        console.log('Error. Status Code: ' +
-          response.status);
-        return;
-      }
 
-      // Examine the text in the response
-      response.json().then(function(data) {
-        console.log(data);
-				self.factory(data);
-      });
-    }
-  )
-  .catch(function(err) {
-    console.log('Fetch Error :-S', err);
-  });
-};
 
 topnav = new Nav('.hg-nav');
 topnav.init();

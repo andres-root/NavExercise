@@ -216,6 +216,13 @@ header {
 						}
 
 					}
+
+					&:focus {
+						@media #{$desktop} {
+							background-color: #ffffff;
+							color: $huge-magenta;
+						}
+					}
 					
 					&.toggle-secondary {
 						&.open {
@@ -247,9 +254,16 @@ section.hero {
 	background-image: url('../images/background-image.jpg');
 	height: 90vh;
 	transition: margin-left .5s;
+  background-repeat: no-repeat;
+  background-size: cover;
 
 	&.toggle-left {
 		margin-left: 80%;
+	}
+
+	h1 {
+		font-family: 'HUGEAvantGardeBold';
+		font-size: 100px;
 	}
 
 	@media #{$desktop} {
