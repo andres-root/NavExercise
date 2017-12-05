@@ -134,7 +134,7 @@ header nav {
 
 header nav ul.menu {
   background-color: #ffffff;
-  height: 100vh;
+  height: auto;
   list-style: none;
   margin: 0;
   margin-left: -100%;
@@ -143,6 +143,7 @@ header nav ul.menu {
   position: relative;
   transition: margin-left .5s;
   width: 100%;
+  z-index: 1024;
 }
 
 @media only screen and (min-width: 768px) {
@@ -267,7 +268,7 @@ header nav ul.menu li a.toggle-secondary img {
 
 section.hero {
   background-image: url("../images/background-image.jpg");
-  height: 90vh;
+  height: 240px;
   transition: margin-left .5s;
   background-repeat: no-repeat;
   background-size: cover;
@@ -278,6 +279,7 @@ section.hero.toggle-left {
 }
 
 section.hero h1 {
+  display: none;
   font-family: 'HUGEAvantGardeBold';
   font-size: 40px;
   width: 100%;
@@ -285,6 +287,7 @@ section.hero h1 {
 
 @media only screen and (min-width: 768px) {
   section.hero h1 {
+    display: block;
     font-size: 100px;
     width: auto;
   }
@@ -293,5 +296,36 @@ section.hero h1 {
 @media only screen and (min-width: 768px) {
   section.hero {
     height: 100vh;
+  }
+}
+
+section.copy h2 {
+  color: #000000;
+  display: block;
+  font-family: HUGEAvantGardeBold;
+  font-size: 40px;
+  padding: 50px 24px 50px 24px;
+}
+
+@media only screen and (min-width: 768px) {
+  section.copy h2 {
+    display: none;
+  }
+}
+
+section.copy p {
+  color: #000000;
+  font-family: GalaxieBook;
+  font-size: 14px;
+  line-height: 24px;
+  padding: 0px 24px 24px 24px;
+}
+
+@media only screen and (min-width: 768px) {
+  section.copy p {
+    font-size: 24px;
+    padding-top: 60px;
+    margin: auto;
+    width: 968px;
   }
 }

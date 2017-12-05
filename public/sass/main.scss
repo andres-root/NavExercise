@@ -133,7 +133,7 @@ header {
 
 		ul.menu {
 			background-color: #ffffff;
-			height: 100vh;
+			height: auto;
 			list-style: none;
 			margin: 0;
 			margin-left: -100%;
@@ -142,6 +142,7 @@ header {
 			position: relative;
 			transition: margin-left .5s;
 			width: 100%;
+			z-index: 1024;
 
 			@media #{$desktop} {
 				background-color: transparent;
@@ -266,7 +267,7 @@ header {
 
 section.hero {
 	background-image: url('../images/background-image.jpg');
-	height: 90vh;
+	height: 240px;
 	transition: margin-left .5s;
   background-repeat: no-repeat;
   background-size: cover;
@@ -276,11 +277,13 @@ section.hero {
 	}
 
 	h1 {
+		display: none;
 		font-family: 'HUGEAvantGardeBold';
 		font-size: 40px;
 		width: 100%;
 
 		@media #{$desktop} {
+			display: block;
 			font-size:100px;
 			width: auto;
 		}
@@ -290,4 +293,36 @@ section.hero {
 		height: 100vh;
 	}
 
+}
+
+section.copy {
+
+	h2 {
+		color: #000000;
+		display: block;
+		font-family: HUGEAvantGardeBold;
+		font-size: 40px;
+		padding: 50px 24px 50px 24px;
+
+
+		@media #{$desktop} {
+			display: none;
+		}
+	}
+
+	p {
+		color: #000000;
+		font-family: GalaxieBook;
+		font-size: 14px;
+		line-height: 24px;
+		padding: 0px 24px 24px 24px;
+
+
+		@media #{$desktop} {
+			font-size: 24px;
+			padding-top: 60px;
+			margin: auto;
+			width: 968px;
+		}
+	}
 }
