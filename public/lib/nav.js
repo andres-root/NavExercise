@@ -1,6 +1,6 @@
 /**
  * Navigation Component.
- * Andres Lujan 
+ * By Andres Lujan 
  * 
  * @param {string} className
  * @class
@@ -43,7 +43,7 @@ Nav.prototype.data = function data(url) {
 
       // Examine the text in the response
       response.json().then(function(data) {
-      	// Call
+      	// Create menu
 				self.factory(data);
       });
     }
@@ -55,27 +55,23 @@ Nav.prototype.data = function data(url) {
 
 
 /**
- * data() makes request to API
- * @param {string} url
+ * factory() create menu using API data
+ * @param {data} JSON
  */
-Nav.prototype.createNode = function createNode(elementType) {
-	return document.createElement(elementType);
-};
-
-Nav.prototype.appendNode = function appendNode(parent, el) {
-  return parent.appendChild(el);
-};
-
-Nav.prototype.factory = function factory(data) {
+ Nav.prototype.factory = function factory(data) {
 	var self = this;
 	var container = this.menu;
 
 	var items = data.items;
+
+	// Go through items
 	items.map(function (item) {
 		var subitems = item.items;
 		var li = self.createNode('li'),
 				a = self.createNode('a');
 		a.innerHTML = item.label;
+
+		// Check if secondary navigation items exist
 		if (subitems.length > 0) {
 			var img = self.createNode('img'),
 					ul = self.createNode('ul');
@@ -102,6 +98,17 @@ Nav.prototype.factory = function factory(data) {
 	this.toggleSecondary = this.element.querySelectorAll('.toggle-secondary');
 	this.addEvents();
 };
+
+
+Nav.prototype.createNode = function createNode(elementType) {
+	return document.createElement(elementType);
+};
+
+Nav.prototype.appendNode = function appendNode(parent, el) {
+  return parent.appendChild(el);
+};
+
+
 
 
 Nav.prototype.addEvents = function addEvents() {
