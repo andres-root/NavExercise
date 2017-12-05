@@ -125,6 +125,10 @@ Nav.prototype.addEvents = function addEvents() {
 		self.toggle();
 	}, false);
 
+	this.overlay.addEventListener('touchstart', function handleOverlayTouch(event) {
+		self.toggle();
+	}, false);
+
 	for (var i = 0; i < this.toggleSecondary.length; i++) {
 		this.toggleSecondary[i].addEventListener('click', function handleToggleSecondary(event) {
 			event.preventDefault();

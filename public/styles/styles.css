@@ -38,8 +38,6 @@ a, a:link, a:visited, a:hover, a:active {
 
 .wrapper {
   transition: margin-left .5s;
-  min-width: 100vw;
-  overflow-x: hidden;
 }
 
 .wrapper.toggle-left {
@@ -307,6 +305,10 @@ section.hero h1 {
   section.hero {
     height: 100vh;
   }
+}
+
+section.copy {
+  min-width: 100vw;
 }
 
 section.copy h2 {
