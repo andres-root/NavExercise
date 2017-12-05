@@ -103,25 +103,21 @@ Nav.prototype.data = function data(url) {
 		}
 		self.appendNode(container, li);
 	});
+
 	this.toggleSecondary = this.element.querySelectorAll('.toggle-secondary');
+
+	// Add event listeners after DOM elements are created
 	this.addEvents();
 };
 
 
-Nav.prototype.createNode = function createNode(elementType) {
-	return document.createElement(elementType);
-};
-
-Nav.prototype.appendNode = function appendNode(parent, el) {
-  return parent.appendChild(el);
-};
-
-
-
-
+/**
+ * addEvents() add event listeners
+ *
+ */
 Nav.prototype.addEvents = function addEvents() {
-	console.log('Nav.addEvents()');
 	var self = this;
+
 	this.logo.addEventListener('click', function handleToggle(event) {
 		self.toggle();
 	}, false);
@@ -138,7 +134,33 @@ Nav.prototype.addEvents = function addEvents() {
 	}
 };
 
+
+/**
+ * createNode() create DOM Element
+ * @param {elementType} string
+ */
+Nav.prototype.createNode = function createNode(elementType) {
+	return document.createElement(elementType);
+};
+
+
+/**
+ * appendNode() append element to existing DOM Element
+ * @param {parent} Element
+ * @param {el} Element
+ */
+Nav.prototype.appendNode = function appendNode(parent, el) {
+  return parent.appendChild(el);
+};
+
+
+/**
+ * toggle() toggle navigation dropdowns
+ * on Desktop and Mobile
+ */
 Nav.prototype.toggle = function toggle() {
+
+	// If mobile toggle from left
 	if (window.innerWidth < 768) {
 		// Push from left
 		this.element.classList.toggle('active');
@@ -146,6 +168,7 @@ Nav.prototype.toggle = function toggle() {
 		this.menu.classList.toggle('toggle-left');
 		document.querySelector('.content').classList.toggle('toggle-left');
 	} else {
+	  // Remove current opened items
 		this.removeOpened();
 	}
 	this.overlay.classList.toggle('visible');
