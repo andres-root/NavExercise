@@ -179,7 +179,7 @@ Nav.prototype.toggle = function toggle() {
 		this.element.classList.toggle('active');
 		this.logo.classList.toggle('toggle-left');
 		this.menu.classList.toggle('toggle-left');
-		document.querySelector('.content').classList.toggle('toggle-left');
+		document.querySelector('.wrapper').classList.toggle('toggle-left');
 	} else {
 	  // Remove current opened items
 		this.removeOpened();

@@ -20,7 +20,7 @@ a, a:link, a:visited, a:hover, a:active {
   display: none;
   height: 100%;
   left: 0;
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%;
   z-index: 1;
@@ -34,6 +34,15 @@ a, a:link, a:visited, a:hover, a:active {
   .overlay {
     display: none;
   }
+}
+
+.wrapper {
+  transition: margin-left .5s;
+  min-width: 100vw;
+}
+
+.wrapper.toggle-left {
+  margin-left: 80%;
 }
 
 header {
